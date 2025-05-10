@@ -1,5 +1,9 @@
+// app/api/payment/webhook/route.ts
 import { type NextRequest, NextResponse } from "next/server"
 import { verifyPayment } from "@/app/lib/actions"
+
+// Tell Next.js this route is dynamic and should not be statically analyzed
+export const dynamic = 'force-dynamic'
 
 export async function POST(request: NextRequest) {
   try {
